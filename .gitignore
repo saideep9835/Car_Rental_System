@@ -1,0 +1,21 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+env/
+*.env
+.env
+
+# Ignore pipenv virtual environment
+Pipfile
+Pipfile.lock
+
+# IDE settings
+.idea/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
