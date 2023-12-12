@@ -105,7 +105,7 @@ class CarRentalSystem:
         else:
             print(f"Car (ID: {car_id}) was not rented or does not exist in the inventory.")
 
-    def extend_rental(self, extension_days):
+    def extend_rental(self, car_id, extension_days, user_id):
         if car_id in self.rented_cars and car_id in self.inventory and user_id in self.users:
             user = self.users[user_id]
             if car_id in user.rental_history:
@@ -148,5 +148,3 @@ class CarRentalSystem:
             if rental_date and start_date <= rental_date <= end_date:
                 rented_cars[car_id] = self.inventory[car_id]
         return rented_cars
-
-# Rest of the code remains the same

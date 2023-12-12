@@ -93,9 +93,9 @@ class CarRentalSystem:
 
     def calculate_rental_cost(self, car_id, return_date):
         if car_id in self.rented_cars:
-            user_id = self.rented_cars[car_id]
-            user = self.users[user_id]
             pass
+            user = self.users[user_id]
+            rental_date = user.rental_history.get(car_id)
             if rental_date:
                 rental_period = (return_date - rental_date).days
                 rental_cost = rental_period * 50  # Example cost calculation
@@ -148,5 +148,3 @@ class CarRentalSystem:
             if rental_date and start_date <= rental_date <= end_date:
                 rented_cars[car_id] = self.inventory[car_id]
         return rented_cars
-
-# Rest of the code remains the same

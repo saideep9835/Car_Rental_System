@@ -66,7 +66,7 @@ class CarRentalSystem:
         elif car_id in self.rented_cars:
             print(f"Car (ID: {car_id}) is already rented.")
         elif user_id not in self.users:
-            print(f"")
+            pass
         else:
             print(f"Car with ID {car_id} not found in inventory.")
 
@@ -148,5 +148,3 @@ class CarRentalSystem:
             if rental_date and start_date <= rental_date <= end_date:
                 rented_cars[car_id] = self.inventory[car_id]
         return rented_cars
-
-# Rest of the code remains the same

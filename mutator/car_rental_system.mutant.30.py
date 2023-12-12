@@ -24,8 +24,8 @@ class CarRentalSystem:
         self.users = {}  # Dictionary to store user information
 
     def add_car_to_inventory(self, car_id, car_name):
-        if car_id  in self.inventory:
-            self.inventory[car_id] = car_name
+        if car_id not in self.inventory:
+            pass
             print(f"Added car {car_name} (ID: {car_id}) to inventory.")
         else:
             print(f"Car with ID {car_id} already exists in inventory.")
@@ -148,5 +148,3 @@ class CarRentalSystem:
             if rental_date and start_date <= rental_date <= end_date:
                 rented_cars[car_id] = self.inventory[car_id]
         return rented_cars
-
-# Rest of the code remains the same

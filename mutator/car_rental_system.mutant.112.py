@@ -76,7 +76,7 @@ class CarRentalSystem:
             rental_period = self.users[user_id].return_car(car_id, return_date)
             if rental_period is not None:
                 rental_cost = rental_period * 50  # Example cost calculation
-                print(f"")
+                pass
         else:
             print(f"Car (ID: {car_id}) was not rented or does not exist in the inventory.")
 
@@ -148,5 +148,3 @@ class CarRentalSystem:
             if rental_date and start_date <= rental_date <= end_date:
                 rented_cars[car_id] = self.inventory[car_id]
         return rented_cars
-
-# Rest of the code remains the same

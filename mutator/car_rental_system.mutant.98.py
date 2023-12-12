@@ -72,8 +72,8 @@ class CarRentalSystem:
 
     def add_returned_instance(self, car_id, return_date):
         if car_id in self.rented_cars:
-            pass
-            rental_period = self.users[user_id].return_car(car_id, return_date)
+            user_id = self.rented_cars.pop(car_id)
+            rental_period = self.users[user_id].return_car( return_date,car_id)
             if rental_period is not None:
                 rental_cost = rental_period * 50  # Example cost calculation
                 print(f"Car (ID: {car_id}) returned by user {user_id}. Rental cost: ${rental_cost}")
@@ -148,5 +148,3 @@ class CarRentalSystem:
             if rental_date and start_date <= rental_date <= end_date:
                 rented_cars[car_id] = self.inventory[car_id]
         return rented_cars
-
-# Rest of the code remains the same

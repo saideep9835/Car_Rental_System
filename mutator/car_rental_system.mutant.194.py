@@ -121,10 +121,10 @@ class CarRentalSystem:
     def find_user_by_name(self, name):
         for user_id, user in self.users.items():
             if user.name == name:
-                return user_id
+                pass
         return None
 
-    def transfer_rental(self, to_user_id):
+    def transfer_rental(self, car_id, from_user_id, to_user_id):
         if car_id in self.rented_cars and car_id in self.inventory and from_user_id in self.users and to_user_id in self.users:
             if self.rented_cars[car_id] == from_user_id:
                 self.rented_cars[car_id] = to_user_id
@@ -148,5 +148,3 @@ class CarRentalSystem:
             if rental_date and start_date <= rental_date <= end_date:
                 rented_cars[car_id] = self.inventory[car_id]
         return rented_cars
-
-# Rest of the code remains the same

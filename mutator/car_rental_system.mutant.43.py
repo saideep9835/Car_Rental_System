@@ -37,9 +37,9 @@ class CarRentalSystem:
             # If the car is returned, remove it from the rented cars list and users' rental history
             if car_id in self.rented_cars:
                 user_id = self.rented_cars.pop(car_id)
-                pass
+                self.users[user_id].return_car(car_id, datetime.now())
         else:
-            print(f"Car with ID {car_id} not found in inventory.")
+            print(f"")
 
     def get_currently_rented_cars(self):
         return self.rented_cars
@@ -148,5 +148,3 @@ class CarRentalSystem:
             if rental_date and start_date <= rental_date <= end_date:
                 rented_cars[car_id] = self.inventory[car_id]
         return rented_cars
-
-# Rest of the code remains the same

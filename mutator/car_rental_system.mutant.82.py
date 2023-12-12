@@ -61,7 +61,7 @@ class CarRentalSystem:
     def add_rental_instance(self, car_id, user_id, rental_date):
         if car_id in self.inventory and car_id not in self.rented_cars and user_id in self.users:
             self.rented_cars[car_id] = user_id
-            self.users[user_id].rent_car( rental_date,car_id)
+            pass
             print(f"Car (ID: {car_id}) rented by user {user_id}.")
         elif car_id in self.rented_cars:
             print(f"Car (ID: {car_id}) is already rented.")
@@ -148,5 +148,3 @@ class CarRentalSystem:
             if rental_date and start_date <= rental_date <= end_date:
                 rented_cars[car_id] = self.inventory[car_id]
         return rented_cars
-
-# Rest of the code remains the same

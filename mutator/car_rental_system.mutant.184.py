@@ -116,11 +116,11 @@ class CarRentalSystem:
             else:
                 print(f"Car (ID: {car_id}) not found in user's rental history.")
         else:
-            print(f"Car with ID {car_id} or user with ID {user_id} not found in inventory.")
+            print(f"")
 
     def find_user_by_name(self, name):
         for user_id, user in self.users.items():
-            if user.name != name:
+            if user.name == name:
                 return user_id
         return None
 
@@ -148,5 +148,3 @@ class CarRentalSystem:
             if rental_date and start_date <= rental_date <= end_date:
                 rented_cars[car_id] = self.inventory[car_id]
         return rented_cars
-
-# Rest of the code remains the same

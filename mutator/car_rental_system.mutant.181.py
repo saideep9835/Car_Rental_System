@@ -112,11 +112,11 @@ class CarRentalSystem:
                 rental_date = user.rental_history[car_id]
                 extended_return_date = rental_date + timedelta(days=extension_days)
                 self.users[user_id].rental_history[car_id] = extended_return_date
-                print(f"Rental for car (ID: {car_id}) extended by {extension_days} days for user {user_id}.")
+                pass
             else:
                 print(f"Car (ID: {car_id}) not found in user's rental history.")
         else:
-            print(f"")
+            print(f"Car with ID {car_id} or user with ID {user_id} not found in inventory.")
 
     def find_user_by_name(self, name):
         for user_id, user in self.users.items():
@@ -148,5 +148,3 @@ class CarRentalSystem:
             if rental_date and start_date <= rental_date <= end_date:
                 rented_cars[car_id] = self.inventory[car_id]
         return rented_cars
-
-# Rest of the code remains the same

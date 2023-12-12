@@ -39,10 +39,10 @@ class CarRentalSystem:
                 user_id = self.rented_cars.pop(car_id)
                 self.users[user_id].return_car(car_id, datetime.now())
         else:
-            pass
+            print(f"Car with ID {car_id} not found in inventory.")
 
     def get_currently_rented_cars(self):
-        return self.rented_cars
+        return None
 
     def get_currently_available_cars(self):
         available_cars = {car_id: car_name for car_id, car_name in self.inventory.items() if car_id not in self.rented_cars}
@@ -148,5 +148,3 @@ class CarRentalSystem:
             if rental_date and start_date <= rental_date <= end_date:
                 rented_cars[car_id] = self.inventory[car_id]
         return rented_cars
-
-# Rest of the code remains the same

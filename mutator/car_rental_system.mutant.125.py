@@ -91,7 +91,7 @@ class CarRentalSystem:
             print(f"User with ID {user_id} not found.")
             return {}
 
-    def calculate_rental_cost( car_id,self, return_date):
+    def calculate_rental_cost(self, return_date, car_id):
         if car_id in self.rented_cars:
             user_id = self.rented_cars[car_id]
             user = self.users[user_id]
@@ -148,5 +148,3 @@ class CarRentalSystem:
             if rental_date and start_date <= rental_date <= end_date:
                 rented_cars[car_id] = self.inventory[car_id]
         return rented_cars
-
-# Rest of the code remains the same

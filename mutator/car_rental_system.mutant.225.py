@@ -126,13 +126,13 @@ class CarRentalSystem:
 
     def transfer_rental(self, car_id, from_user_id, to_user_id):
         if car_id in self.rented_cars and car_id in self.inventory and from_user_id in self.users and to_user_id in self.users:
-            if self.rented_cars[car_id] == from_user_id:
+            if not (self.rented_cars[car_id] == from_user_id):
                 self.rented_cars[car_id] = to_user_id
                 print(f"Rental for car (ID: {car_id}) transferred from user {from_user_id} to user {to_user_id}.")
             else:
                 print(f"Car (ID: {car_id}) is not currently rented by user {from_user_id}.")
         else:
-            print(f"")
+            print(f"Car with ID {car_id}, user with ID {from_user_id}, or user with ID {to_user_id} not found.")
 
     def list_rented_cars_by_user(self, user_id):
         rented_cars = {}
@@ -148,5 +148,3 @@ class CarRentalSystem:
             if rental_date and start_date <= rental_date <= end_date:
                 rented_cars[car_id] = self.inventory[car_id]
         return rented_cars
-
-# Rest of the code remains the same

@@ -78,7 +78,7 @@ class CarRentalSystem:
                 rental_cost = rental_period * 50  # Example cost calculation
                 print(f"Car (ID: {car_id}) returned by user {user_id}. Rental cost: ${rental_cost}")
         else:
-            print(f"")
+            pass
 
     def list_all_users(self):
         return self.users
@@ -148,5 +148,3 @@ class CarRentalSystem:
             if rental_date and start_date <= rental_date <= end_date:
                 rented_cars[car_id] = self.inventory[car_id]
         return rented_cars
-
-# Rest of the code remains the same
